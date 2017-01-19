@@ -5,6 +5,8 @@ alias egrep="egrep --color=always"
 alias gc="git commit -S -v"
 alias gcm="git commit -S -v -m"
 
+alias stats='py --ji -l '\''print("Min: %f" % min(l)), print("Max: %f" % max(l)), print("Median: %f" % numpy.median(l)), print("Mean: %f" % numpy.mean(l))'\'''
+
 alias bro-column="sed \"s/fields.//;s/types.//\" | column -s $'\t' -t"
 alias bro-awk='awk -F" "'
 bro-grep() { grep -E "(^#)|$1" $2; }
