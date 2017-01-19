@@ -56,3 +56,6 @@ if [[ $OSTYPE == darwin* ]]; then
 else
   ln $params $script_home/.bashrc $HOME/.bashrc
 fi
+
+# Install pythonpy
+#pip install https://github.com/Russell91/pythonpy/archive/master.tar.gz
