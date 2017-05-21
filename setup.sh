@@ -30,6 +30,11 @@ fi
 # Add our custom aliases to bash-it
 ln $params $script_home/custom.aliases.bash $HOME/.bash_it/aliases/custom.aliases.bash
 
+# Add custom plugins to bash-it
+for item in bash_plugins/*.bash; do
+    ln -s $params $item ~/.bash_it/custom/
+done
+
 # Add Dustin's syntax highlights for Bro
 for i in ftdetect syntax; do
     if [ ! -f $HOME/.vim/$i/bro.vim ]; then
