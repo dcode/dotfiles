@@ -28,3 +28,6 @@ if [ -e $BASH_IT/bash_it.sh ]
 then
   source $BASH_IT/bash_it.sh
 fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
