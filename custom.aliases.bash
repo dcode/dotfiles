@@ -4,9 +4,14 @@ alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 alias gc="git commit -S -v"
 alias gcm="git commit -S -v -m"
+alias sudo="sudo -E"
 
 alias stats='py --ji -l '\''print("Min: %f" % min(l)), print("Max: %f" % max(l)), print("Median: %f" % numpy.median(l)), print("Mean: %f" % numpy.mean(l))'\'''
+# Commit and push everything
+gitdone() { git add -A; git commit -S -v -m "$1"; git push; }
 
+# Analyst stuff
+>>>>>>> 8f29382a8e2d999f104b1854fb2ae4010d838c90
 alias bro-column="sed \"s/fields.//;s/types.//\" | column -s $'\t' -t"
 alias bro-awk='awk -F" "'
 bro-grep() { grep -E "(^#)|$1" $2; }
