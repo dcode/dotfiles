@@ -25,12 +25,6 @@ then
   source ~/.bash_aliases
 fi
 
-# Include bashrc file (if present).
-if [ -f ~/.bashrc ]
-then
-  source ~/.bashrc
-fi
-
 # Syntax-highlight code for copying and pasting.
 # Requires highlight (`brew install highlight`).
 function pretty() {
