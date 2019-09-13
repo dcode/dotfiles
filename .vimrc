@@ -81,13 +81,10 @@ set nojoinspaces
 
 " Numbers
 set number
-set numberwidth=5
+set numberwidth=4
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+" clipboard
+set clipboard=unnamed   " allow yy, etc. to interact with OS X clipboard
 
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>

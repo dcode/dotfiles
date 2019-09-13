@@ -9,10 +9,33 @@ if [ -d /usr/local/opt/coreutils/libexec ]; then
   export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
+# Use colors.
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
 # dircolors
 if [ -e ~/.dircolors ]; then
   eval `dircolors -b ~/.dircolors`
 fi
+
+
+# Include alias file (if present) containing aliases for ssh, etc.
+if [ -f ~/.bash_aliases ]
+then
+  source ~/.bash_aliases
+fi
+
+# Include bashrc file (if present).
+if [ -f ~/.bashrc ]
+then
+  source ~/.bashrc
+fi
+
+# Syntax-highlight code for copying and pasting.
+# Requires highlight (`brew install highlight`).
+function pretty() {
+  pbpaste | highlight --syntax=$1 -O rtf | pbcopy
+}
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -42,15 +65,23 @@ if [ -n $TMUX ]; then
   alias vim="TERM=screen-256color vim"
 fi
 
-# Put bash in vim mode
-set -o vi
-
 # Set default editor to vim
 export EDITOR=vim
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-if [ -d ${HOME}/.rvm/bin ]; then
-  export PATH="$PATH:$HOME/.rvm/bin"
+
+# Tell homebrew to not autoupdate every single time I run it (just once a week).
+export HOMEBREW_AUTO_UPDATE_SECS=604800
+
+# Turn on Git autocomplete.
+# brew_prefix=`brew --prefix`
+brew_prefix='/usr/local'
+if [ -f $brew_prefix/etc/bash_completion ]; then
+  . $brew_prefix/etc/bash_completion
 fi
 
+# Turn on kubectl autocomplete.
+if [ -x "$(command -v kubectl)" ]; then
+  source <(kubectl completion bash)
+fi
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
