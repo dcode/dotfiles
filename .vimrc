@@ -11,6 +11,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-syntastic/syntastic'
+Plug 'sts10/vim-pink-moon'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -35,7 +36,7 @@ set ttymouse=xterm2
 " Color adjustments
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme pink-moon
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles

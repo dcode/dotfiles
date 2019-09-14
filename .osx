@@ -415,6 +415,15 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 # Use the system print dialog
 defaults write com.google.Chrome DisablePrintPreview -bool true
 
+
+###############################################################################
+# iTerm                                                                       #
+###############################################################################
+
+# Load profile from dotfiles dir
+defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "$(dirname $0)/iterm"
+defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
+
 ###############################################################################
 # Kill/restart affected applications                                          #
 ###############################################################################
