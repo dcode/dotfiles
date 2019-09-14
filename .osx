@@ -421,7 +421,7 @@ defaults write com.google.Chrome DisablePrintPreview -bool true
 ###############################################################################
 
 # Load profile from dotfiles dir
-defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "$(dirname $0)/iterm"
+defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "$(readlink -f $(dirname $0))/iterm"
 defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
 
 ###############################################################################
