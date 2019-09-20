@@ -33,7 +33,7 @@ function pretty() {
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-export BASH_IT_THEME='cooperkid'
+export BASH_IT_THEME=cooperkid
 
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
@@ -79,3 +79,4 @@ if [ -x "$(command -v kubectl)" ]; then
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+source $BASH_IT/bash_it.sh
